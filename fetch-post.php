@@ -41,7 +41,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                 $search_query = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
 
                 // Search Form
-                
+
                 echo '<form method="get" class="mb-4">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Search your posts..." 
@@ -74,7 +74,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
 
                         // Excerpt for content preview
                         $excerpt = substr($content, 0, 100) . '...';
-                        ?>
+                ?>
                         <!-- Display each post -->
                         <div class="exist_post">
                             <div class="row align-items-center">
@@ -174,11 +174,11 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                                         </div>
                                                         <!-- share to social -->
                                                         <script>
-                                                            (function () {
+                                                            (function() {
                                                                 var copyButton = document.querySelector('.copy-button');
                                                                 var copyInput = document.querySelector('.copy-form input');
 
-                                                                copyButton.addEventListener('click', function (e) {
+                                                                copyButton.addEventListener('click', function(e) {
                                                                     e.preventDefault();
                                                                     copyInput.select();
                                                                     document.execCommand('copy');
@@ -228,10 +228,13 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
-                    echo "<p>No published posts found.</p>";
+                    echo '<div class="nothing_found text-center">
+                    <img src="assets/uploads/empty.png" class="img-fluid w-10" alt="nothing">
+                    <p class="text-center mt-4">No Published posts found.</p>
+                  </div>';
                 }
                 ?>
             </div>
@@ -265,7 +268,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
 
                         // Excerpt for content preview
                         $excerpt = substr($content, 0, 100) . '...';
-                        ?>
+                ?>
                         <!-- Display each post -->
                         <div class="exist_post">
                             <div class="row align-items-center">
@@ -365,11 +368,11 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                                         </div>
                                                         <!-- share to social -->
                                                         <script>
-                                                            (function () {
+                                                            (function() {
                                                                 var copyButton = document.querySelector('.copy-button');
                                                                 var copyInput = document.querySelector('.copy-form input');
 
-                                                                copyButton.addEventListener('click', function (e) {
+                                                                copyButton.addEventListener('click', function(e) {
                                                                     e.preventDefault();
                                                                     copyInput.select();
                                                                     document.execCommand('copy');
@@ -419,7 +422,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
                     echo '<div class="nothing_found text-center">
@@ -455,7 +458,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
 
                         // Excerpt for content preview
                         $excerpt = substr($content, 0, 100) . '...';
-                        ?>
+                ?>
                         <!-- Display each post -->
                         <div class="exist_post">
                             <div class="row align-items-center">
@@ -555,11 +558,11 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                                         </div>
                                                         <!-- share to social -->
                                                         <script>
-                                                            (function () {
+                                                            (function() {
                                                                 var copyButton = document.querySelector('.copy-button');
                                                                 var copyInput = document.querySelector('.copy-form input');
 
-                                                                copyButton.addEventListener('click', function (e) {
+                                                                copyButton.addEventListener('click', function(e) {
                                                                     e.preventDefault();
                                                                     copyInput.select();
                                                                     document.execCommand('copy');
@@ -585,7 +588,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
                     echo '<div class="nothing_found text-center">
@@ -620,7 +623,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
 
                         // Excerpt for content preview
                         $excerpt = substr($content, 0, 100) . '...';
-                        ?>
+                ?>
                         <!-- Display each post -->
                         <div class="claim">
                             <p>Please <a href="mailto:daakticket05@gmail.com">contact</a> the admin if the reason for post
@@ -672,7 +675,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'published';
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
                     echo '<div class="nothing_found text-center">

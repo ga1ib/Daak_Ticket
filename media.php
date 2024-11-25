@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $query);
                     <p class="text-center">Explore all uploaded media files.</p>
 
                     <div class="gallery">
-                    <?php
+                        <?php
                         if ($result && mysqli_num_rows($result) > 0) {
                             while ($media = mysqli_fetch_assoc($result)) {
                                 $file_path = $media['file_path'];

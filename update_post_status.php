@@ -38,4 +38,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: approve_post.php");
     exit();
 }
-?>

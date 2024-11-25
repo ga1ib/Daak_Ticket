@@ -55,7 +55,7 @@ include 'db.php';
     </div>
 
     <!-- search comp ebds -->
-     
+
 
     <div class="header" id="header">
         <nav class="navbar navbar-expand-lg">
@@ -90,7 +90,7 @@ include 'db.php';
                         </li>
                         <!-- search ends -->
 
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1002): ?>
                                 <a class="nav-link" href="user_dashboard.php"><i class="fa-regular fa-user"></i></a>
                             <?php elseif (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1001): ?>

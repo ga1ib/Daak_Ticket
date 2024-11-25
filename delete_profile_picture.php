@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$role_id = $_SESSION['role_id']; 
+$role_id = $_SESSION['role_id'];
 
 $query = "SELECT profile_picture FROM User_Profile WHERE user_id = '$user_id'";
 $result = mysqli_query($conn, $query);

@@ -23,4 +23,3 @@ if (isset($_GET['post_id']) && isset($_GET['status'])) {
 } else {
     echo "Missing post ID or status.";
 }
-?>
