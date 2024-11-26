@@ -38,7 +38,7 @@
             <li class="sidebar-item">
                 <a href="approve_post.php" class="sidebar-link">
                     <i class="lni lni-check-circle-1"></i>
-                    <span>Approve Post</span>
+                    <span>Post Manager</span>
                 </a>
             </li>
             <li class="sidebar-item">
@@ -93,9 +93,13 @@
                 </a>
             </li>
             <li class="sidebar-item">
+
                 <a href="admin_dashboard.php#notification" class="sidebar-link">
-                    <i class="lni lni-bell-1"></i>
-                    <span>Notification</span>
+                    <button type="button" class="btn notibtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="lni lni-bell-1"></i>
+                        <span>Notification</span>
+                    </button>
+
                 </a>
             </li>
             <li class="sidebar-item">
