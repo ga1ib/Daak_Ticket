@@ -71,8 +71,10 @@
             </li> -->
             <li class="sidebar-item">
                 <a href="user_dashboard.php#notification" class="sidebar-link">
-                    <i class="lni lni-bell-1"></i>
-                    <span>Notification</span>
+                    <button type="button" class="btn notibtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="lni lni-bell-1"></i>
+                        <span>Notification</span>
+                    </button>
                 </a>
             </li>
             <li class="sidebar-item">

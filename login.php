@@ -48,6 +48,29 @@ session_start(); // Start the session
                             $_SESSION['email'] = $user['email'];
                             $_SESSION['role_id'] = $user['role_id'];
 
+                            // Generate a new session token
+                            $session_token = bin2hex(random_bytes(32));
+                            $user_id = $user['user_id'];
+
+                            // Check if a session already exists for the user
+                            $check_session_query = "SELECT * FROM session WHERE user_id = $user_id";
+                            $session_result = mysqli_query($conn, $check_session_query);
+
+                            if (mysqli_num_rows($session_result) > 0) {
+                                // Update the existing session with new token and login time
+                                $update_session_query = "
+                    UPDATE session 
+                    SET session_token = '$session_token', login_timestamp = NOW(), logout_timestamp = NULL 
+                    WHERE user_id = $user_id";
+                                mysqli_query($conn, $update_session_query);
+                            } else {
+                                // Insert new session record if it doesn't exist
+                                $insert_session_query = "
+                    INSERT INTO session (user_id, session_token, login_timestamp) 
+                    VALUES ($user_id, '$session_token', NOW())";
+                                mysqli_query($conn, $insert_session_query);
+                            }
+
                             // Redirect based on the user's role
                             if ($user['role_id'] == 1001) {
                                 // Admin role

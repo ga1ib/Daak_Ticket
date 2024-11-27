@@ -77,7 +77,8 @@
                                     <p class="ps-2"><?php echo date('d M, Y', strtotime($post['created_at'])); ?></p>
                                 </div>
                                 <div class="author_box category_name">
-                                    <p>Category: <?php echo htmlspecialchars($post['category_name'] ?? 'Uncategorized'); ?></p>
+                                    <p>Category: <?php echo htmlspecialchars($post['category_name'] ?? 'Uncategorized'); ?>
+                                    </p>
                                 </div>
                                 <div class="blog_ttle">
                                     <a href="view-post.php?post_id=<?php echo $post['post_id']; ?>">
@@ -128,6 +129,7 @@
             ?>
         </div>
     </div>
+</div>
 </div>
 <!-- blog ends -->
 
