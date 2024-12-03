@@ -123,7 +123,7 @@ $user = mysqli_fetch_assoc($user_result);
                         if ($post_result && mysqli_num_rows($post_result) > 0) {
                             while ($post = mysqli_fetch_assoc($post_result)) {
                                 $excerpt = isset($post['content']) ? substr($post['content'], 0, 90) . '...' : 'No content available.';
-                        ?>
+                                ?>
                                 <div class="col-md-4 mb-4">
                                     <div class="blog_box">
                                         <a href="view-post.php?post_id=<?php echo $post['post_id']; ?>">
@@ -183,7 +183,7 @@ $user = mysqli_fetch_assoc($user_result);
                                         </div>
                                     </div>
                                 </div>
-                        <?php
+                                <?php
                             }
                         } else {
                             echo '<div class="nothing_found text-center">

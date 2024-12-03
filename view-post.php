@@ -144,14 +144,14 @@ $like_count = mysqli_fetch_assoc($like_count_result)['like_count'];
 ob_end_flush();
 ?>
 
-<div class="container">
+<div class="container-lg cp20">
     <div class="row">
         <div class="col-md-12">
             <!-- Post Details -->
             <div class="postpg">
                 <img src="<?php echo htmlspecialchars($post['feature_image'] ?? 'assets/default-image.jpg'); ?>"
                     alt="Feature Image" class="img-fluid">
-                <div class="d-flex align-items-center justify-content-between">
+                <div class="postdetails d-flex align-items-center justify-content-between">
                     <div class="pcriteria mt-3 mb-2">
                         <p><strong>Category:</strong>
                             <?php echo htmlspecialchars($post['category_name'] ?? 'Uncategorized'); ?></p>
@@ -165,7 +165,7 @@ ob_end_flush();
                         </a>
                     </div>
                 </div>
-                <div class="post_content">
+                <div class="post_content mt-5">
                     <h2><?php echo htmlspecialchars($post['title']); ?></h2>
                     <p><?php echo nl2br(htmlspecialchars($post['content'])); ?></p>
                 </div>
@@ -183,7 +183,7 @@ ob_end_flush();
                     </div>
                     <div class="comment-count-box d-flex align-items-center ps-3 pe-3">
                         <a href="view-post.php?post_id=<?php echo $post['post_id']; ?>#comment_section">
-                            <i class="lni lni-comment-1-text tooltip-test" title="Comments"></i></a>
+                            <i class="lni lni-comment-1-text tooltip-test"  title="Comments"></i></a>
                         <span class="comment-count">
                             <?php
                             $post_id = $post['post_id'];
@@ -247,11 +247,11 @@ ob_end_flush();
                                         </div>
                                         <!-- share to social -->
                                         <script>
-                                            (function() {
+                                            (function () {
                                                 var copyButton = document.querySelector('.copy-button');
                                                 var copyInput = document.querySelector('.copy-form input');
 
-                                                copyButton.addEventListener('click', function(e) {
+                                                copyButton.addEventListener('click', function (e) {
                                                     e.preventDefault();
                                                     copyInput.select();
                                                     document.execCommand('copy');
@@ -268,7 +268,7 @@ ob_end_flush();
                     <!-- Report Modal -->
                     <div class="modal fade" id="reportModal-<?php echo $post['post_id']; ?>" tabindex="-1"
                         aria-labelledby="reportModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="reportModalLabel">Report Post</h5>
@@ -311,7 +311,7 @@ ob_end_flush();
                     $profile_image = !empty($comment['profile_picture'])
                         ? htmlspecialchars($comment['profile_picture'])
                         : 'assets/uploads/profile_pictures/default_profile.png';
-            ?>
+                    ?>
 
                     <div class="comment-item d-flex align-items-end justify-content-between">
                         <div class="comment-add">
@@ -344,7 +344,7 @@ ob_end_flush();
                             </div>
                         </div>
                     </div>
-            <?php }
+                <?php }
             } else {
                 echo "<p>No comments yet.</p>";
             }
@@ -357,7 +357,7 @@ ob_end_flush();
                     $edit_query = "SELECT comment_text FROM comment WHERE comment_id = $comment_id";
                     $edit_result = mysqli_query($conn, $edit_query);
                     $edit_comment = mysqli_fetch_assoc($edit_result);
-                ?>
+                    ?>
                     <form method="POST">
                         <textarea name="comment_text" rows="4"
                             class="form-control"><?php echo htmlspecialchars($edit_comment['comment_text']); ?></textarea>

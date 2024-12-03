@@ -1,9 +1,16 @@
 <?php
+ob_start();
 include 'header.php';
 include 'sidebar.php';
-?>
-<div class=" main dashboard">
-    <div class="container">
+if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) {
+    $_SESSION['message'] = 'Please verify your OTP before accessing the dashboard.';
+    $_SESSION['messageType'] = 'error';
+    header('Location: verify_otp.php');
+    exit();
+}
+ob_end_flush(); ?>
+<div class=" main dashboard usb">
+    <div class="container-lg">
         <div class="row align-items-center">
             <div class="col-md-12 cp60" id="profile">
                 <div class="dash">
@@ -149,8 +156,7 @@ include 'sidebar.php';
                     </form>
 
                     <?php
-
-                    // Check if the form is submitted
+                    // user_profile update
                     if (isset($_POST['update_user_info'])) {
                         $user_id = $_SESSION['user_id'];
                         $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
@@ -174,11 +180,22 @@ include 'sidebar.php';
                         linkedin_link = '$linkedin_link'
                         WHERE user_id = '$user_id'";
 
-                        $result = mysqli_query($conn, $query);
+                        $profile_result = mysqli_query($conn, $query);
 
-                        if ($result) {
+                        $update_user_query = "
+                        UPDATE user 
+                        SET 
+                        first_name = '$first_name',
+                        last_name = '$last_name',
+                        email = '$email'
+                        WHERE user_id = '$user_id'";
+
+                        $user_result = mysqli_query($conn, $update_user_query);
+
+                        if ($profile_result && $user_result) {
                             $_SESSION['message'] = "Profile updated successfully!";
                             $_SESSION['messageType'] = 'success';
+
                         } else {
                             $_SESSION['message'] = "Failed to update profile. Please try again.";
                             $_SESSION['messageType'] = 'error';

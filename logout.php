@@ -11,7 +11,7 @@ if (isset($_SESSION['user_id'])) {
         UPDATE session 
         SET logout_timestamp = NOW(), session_token = NULL 
         WHERE user_id = $user_id";
-    $updated_logout_query = mysqli_query($conn, $update_logout_query);
+    $updated_logout_query= mysqli_query($conn, $update_logout_query);
 }
 
 $_SESSION['message'] = "Successfully logged out!";
@@ -23,3 +23,4 @@ session_destroy();
 
 header("Location: login.php");
 exit;
+?>

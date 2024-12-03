@@ -72,3 +72,4 @@ $_SESSION['message'] = "Password updated successfully. You can now log in.";
 $_SESSION['messageType'] = "success";
 header("Location: login.php");
 exit;
+?>

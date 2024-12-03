@@ -1,6 +1,6 @@
 <?php include 'header.php';
 session_start();
-?>
+ ?>
 
 <div class="user_access forgot-pass p-0">
     <div class="container">
@@ -22,11 +22,11 @@ session_start();
                 </div>
             </div>
             <div class="col-md-2  col-xl-4"></div>
-
+            
 
 
         </div>
-
+        
     </div>
 </div>
 

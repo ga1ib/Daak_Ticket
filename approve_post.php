@@ -308,7 +308,7 @@ function displayPostsTable($posts, $tab)
             <img src="assets/uploads/empty.png" class="img-fluid w-10" alt="nothing">
             <p class="text-center mt-4">No posts found.</p>
         </div>
-<?php endif;
+    <?php endif;
 }
 ?>
 <?php include 'footer.php'; ?>

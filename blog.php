@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 <div class="contactpg aboutpg">
-    <div class="container">
+    <div class="container-lg">
         <div class="row align-items-center">
             <div class="col-md-12 text-center">
                 <h2>Explore blogs</h2>
@@ -15,7 +15,7 @@
 
 <!-- blog starts -->
 <div class="blogs cp60">
-    <div class="container">
+    <div class="container-lg">
         <div class="about_title d-flex align-items-center justify-content-between mb-5">
             <!-- Filter by categories -->
             <h3>Filter By</h3>
@@ -60,7 +60,7 @@
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($post = mysqli_fetch_assoc($result)) {
                     $excerpt = substr($post['content'], 0, 90) . (strlen($post['content']) > 90 ? '...' : '');
-            ?>
+                    ?>
                     <div class="col-md-4">
                         <div class="blog_box">
                             <a href="view-post.php?post_id=<?php echo $post['post_id']; ?>">
@@ -118,10 +118,10 @@
                             </div>
                         </div>
                     </div>
-            <?php
+                    <?php
                 }
             } else {
-                echo '<div class="nothing_found text-center">
+                echo '<div class="nothing_found text-center col-md-4">
                 <img src="assets/uploads/published.png" class="img-fluid w-10" alt="published">
                 <p class="text-center mt-4">No posts found.</p>
               </div>';

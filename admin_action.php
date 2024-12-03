@@ -55,14 +55,14 @@ ob_end_flush();
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     $serialNo = 1;
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                ?>
+                                        ?>
                                         <tr>
                                             <td><?php echo $serialNo++; ?></td>
                                             <td><?php echo htmlspecialchars($row['username'] ?? 'Unknown Admin'); ?></td>
                                             <td><?php echo htmlspecialchars($row['action_description']); ?></td>
                                             <td><?php echo date('d/m/Y H:i:s', strtotime($row['action_timestamp'])); ?></td>
                                         </tr>
-                                <?php
+                                        <?php
                                     }
                                 } else {
                                     echo "<tr><td colspan='4' class='text-center'>No actions logged yet.</td></tr>";

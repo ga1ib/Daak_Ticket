@@ -4,6 +4,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+*:focus{
+    outline: none !important;
+}
+
 h1,
 h2,
 h3,
@@ -32,6 +36,9 @@ p {
     --cs-warnhover: #ec9b2c;
 }
 
+.prbg{
+    background-color: var(--cs-primary);
+}
 .btn-danger {
     background-color: var(--cs-danger);
     transition: all .2s ease-in-out;
@@ -76,7 +83,7 @@ h3 {
 
 h4 {
     font-size: 18px;
-    font-weight: 200;
+    font-weight: 400;
     color: var(--cs-black);
 }
 
@@ -91,8 +98,20 @@ a {
     color: var(--cs-accent);
 }
 
+a:hover{
+    color: var(--cs-hover);
+}
+
 .cp60 {
-    padding: 60px 0px;
+    padding: 60px 15px;
+}
+
+.cp20{
+    padding: 0 20px;
+}
+
+.tables-container .cp60{
+    padding-bottom: 0!important;
 }
 
 .space {
@@ -136,7 +155,7 @@ a {
     padding: 10px 20px !important;
 }
 
-.modal {
+.noti-modal {
     --bs-modal-width: 50%;
 }
 
@@ -211,15 +230,16 @@ a {
     width: 100%;
     z-index: 100;
     overflow: hidden;
+    padding: 0 15px;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
+.navbar-expand-md .navbar-nav .nav-link {
     padding: 0;
     padding: 0px 15px;
 }
 
 .nav-item a {
-    padding: 0;
+    padding: 0 ;
 }
 
 .navbar-nav .nav-item.active .nav-link {
@@ -241,6 +261,9 @@ a {
 }
 
 /* banner */
+.banner-title{
+    padding: 0 15px;
+}
 .banner {
     background: url(../uploads/banner-bg.png);
     background-repeat: no-repeat;
@@ -303,6 +326,18 @@ a {
 }
 
 /* home-blog */
+/* Default for larger screens (3 columns) */
+#masonry-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Optional spacing between items */
+}
+
+#masonry-grid .col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
 .blog_box {
     position: relative;
     border-radius: 8px;
@@ -423,6 +458,7 @@ a {
 
 .copyright p {
     font-size: 16px;
+    text-align: end !important;
 }
 
 .copyright p a {
@@ -436,6 +472,9 @@ a {
 }
 
 /* logIn page */
+.cta3{
+    display: none;
+}
 .user_access {
     background-color: var(--cs-primary);
     padding-top: 200px;
@@ -1158,4 +1197,38 @@ a {
 
 .nnl li {
     list-style: inside;
+}
+
+/* team page */
+.func li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    list-style: numeric inside;
+}
+
+.instructor {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: .2s all ease-in-out;
+}
+
+.instructor:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.instructor p{
+    text-align: left;
+    font-size: 16px;
+}
+
+.instructor h3 b{
+    font-size: 12px;
+}
+
+.instructor img {
+    width: 100%;
+    border-radius: 10px;
+    height: 380px;
+    object-fit: cover;
 }

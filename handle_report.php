@@ -27,3 +27,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_report'])) {
     header("Location: view-post.php?post_id=$post_id");
     exit();
 }
+?>

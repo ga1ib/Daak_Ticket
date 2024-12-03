@@ -1,6 +1,6 @@
 <!-- footer starts-->
 <div class="footer cp60" id="footer">
-    <div class="container">
+    <div class="container-lg">
         <div class="row justify-content-space-between">
             <div class="col-md-6">
                 <div class="contact_title">
@@ -65,7 +65,10 @@
             <div class="col-md-6 pt-5">
                 <div class="copyright text-end">
                     <p>
-                        &copy; 2024 DaakTicket. All Rights Reserved. Developed By <a href="">Group 05</a>
+                        &copy; 2024 DaakTicket. All Rights Reserved. Developed By <a href="about_daakticket.php" target="_blank">Group 05</a>
+                    </p>
+                    <p>
+                        <a href="terms-condition.php">Terms & Conditions</a>
                     </p>
                 </div>
             </div>
@@ -125,5 +128,4 @@
     ?>
 <?php endif; ?>
 </body>
-
 </html>

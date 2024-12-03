@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['message'] = "Post rejected successfully.";
         $_SESSION['messageType'] = 'success';
+
     } elseif ($action === 'dismiss') {
         $dismiss_reason = mysqli_real_escape_string($conn, $_POST['dismiss_reason']);
 
@@ -44,3 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 header("Location: approve_post.php?tab=report");
 exit();
+?>

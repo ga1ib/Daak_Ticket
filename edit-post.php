@@ -103,7 +103,7 @@ ob_end_flush(); ?>
                             if (file) {
                                 const reader = new FileReader();
 
-                                reader.onload = function(e) {
+                                reader.onload = function (e) {
                                     preview.src = e.target.result;
                                 };
 

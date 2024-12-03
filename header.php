@@ -4,11 +4,10 @@ include 'db.php';
 ?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>DaakTicket</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- font -->
@@ -28,6 +27,7 @@ include 'db.php';
     <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="icon" href="assets/uploads/favicon.png">
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -55,11 +55,11 @@ include 'db.php';
     </div>
 
     <!-- search comp ebds -->
-
+     
 
     <div class="header" id="header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
+        <nav class="navbar navbar-expand-md">
+            <div class="container-lg">
                 <a class="navbar-brand" href="index.php"><img src="assets/uploads/logo.png" class="img-fluid"
                         alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -90,7 +90,7 @@ include 'db.php';
                         </li>
                         <!-- search ends -->
 
-                        <li class="nav-item">
+                         <li class="nav-item">
                             <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1002): ?>
                                 <a class="nav-link" href="user_dashboard.php"><i class="fa-regular fa-user"></i></a>
                             <?php elseif (isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1001): ?>
